@@ -75,6 +75,8 @@ docker build -t vet-ai-image . --no-cache
 # Запуск с поддержкой GPU
 docker run -p 8501:8501 --rm -v ${pwd}:/app vet-ai-image python -m streamlit run app.py
 
+```
+
 # Download the weight file from the Releases section and place it in the root folder.
 
 ### CI/CD Pipeline
