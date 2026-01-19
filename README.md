@@ -108,7 +108,7 @@ docker run -p 8501:8501 --rm -v ${pwd}:/app vet-ai-image python -m streamlit run
 
 ```
 
-# Download the weight file from the Releases section and place it in the root folder.
+**Download the weight file from the Releases section and place it in the root folder.**
 
 ### CI/CD Pipeline
 Проект готов к масштабированию через **Kubernetes (K8s)**. Модульная структура `app.py` и использование `joblib` для версионирования весов позволяют проводить **A/B тестирование** различных версий ядра v15.1, v15.2 параллельно.
