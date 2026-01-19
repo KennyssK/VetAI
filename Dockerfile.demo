@@ -1,0 +1,25 @@
+# 1. Используем стандартный, легкий Python-образ, который работает везде
+FROM python:3.10-slim
+
+# 2. Установка зависимостей Python
+WORKDIR /app
+
+# Копируем необходимые для запуска файлы
+COPY app.py .
+COPY requirements.txt .
+
+# Копируем обученные артефакты (v9):
+# Убедитесь, что эти файлы существуют в вашей папке!
+COPY full_neural_network_model_v9.h5 .
+COPY full_preprocessor_v9.pkl .
+COPY full_label_encoder_v9.pkl .
+
+# 3. Устанавливаем зависимости
+# В вашем requirements.txt должна быть указана зависимость tensorflow (CPU-версия)
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Открываем порт для Streamlit
+EXPOSE 8501
+
+# Команда, которая запускается при старте контейнера
+CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
