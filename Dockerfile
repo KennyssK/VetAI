@@ -18,7 +18,8 @@ RUN pip install --no-cache-dir \
     shap \
     matplotlib \
     protobuf==3.20.0 \
-    tqdm
+    tqdm \
+    fpdf
 
 # Копируем файлы в рабочую директорию
 COPY . /app

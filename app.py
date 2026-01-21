@@ -4,6 +4,7 @@ import numpy as np
 import joblib
 import tensorflow as tf
 from tensorflow import keras
+from pdf_generator import export_to_pdf
 
 # --- КОНФИГУРАЦИЯ СТРАНИЦЫ ---
 st.set_page_config(
@@ -496,8 +497,6 @@ if st.button('РАССЧИТАТЬ ПРЕДВАРИТЕЛЬНЫЙ ДИАГНОЗ
         top_2_probabilities = predictions[top_2_indices]
         top_2_diagnoses = label_encoder.inverse_transform(top_2_indices)
 
-
-    # --- 4.5. Вывод результата (ПРОТОКОЛ) ---
     st.markdown('## 4. Результат Анализа (Протокол)')
     
     st.markdown('### 💡 Предварительные диагнозы')
@@ -576,7 +575,34 @@ if st.button('РАССЧИТАТЬ ПРЕДВАРИТЕЛЬНЫЙ ДИАГНОЗ
             cols_symp[i % 4].markdown(symp)
     else:
         st.markdown("*Симптомы не выбраны.*")
+    
+    # Подготовка данных для PDF
+    report_payload = {
+        'diag1': diagnosis_1_display,
+        'prob1': f"{prob_1*100:.1f}%",
+        'diag2': diagnosis_2_display if len(top_2_diagnoses) > 1 else "Нет",
+        'breed': breed_label,
+        'age': age_label_selected,
+        'vax': final_vax_display,
+        'preventive': f"Дегельм: {deworm_status}; Экто: {ectopara_status}",
+        'status': f"{overall_status_label} ({mental_status_label})",
+        'weight': weight_label,
+        'temp': temp_label,
+        'heart': auscultation_heart_key,
+        'pulse': pulse_status_key,
+        'resp': resp_status_key,
+        'symptoms': [s.replace("✅ ", "") for s in active_symptoms_list]
+    }
 
+    # Кнопка скачивания
+    pdf_bytes = export_to_pdf(report_payload)
+    st.download_button(
+        label="📄 Скачать PDF протокол",
+        data=pdf_bytes,
+        file_name=f"VetAI_{breed_label}.pdf",
+        mime="application/pdf",
+        use_container_width=True
+    )
 
     st.markdown("---")
     st.caption(f"**Версия:** v0.4.0 (Alpha). **Работает на модели v{MODEL_VERSION}.** Требуется полный клинический и лабораторный анализ для постановки окончательного диагноза.")
