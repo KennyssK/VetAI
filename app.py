@@ -21,7 +21,7 @@ st.markdown('---')
 
 # --- 1. Загрузка компонентов (РЕАЛЬНЫЕ КОМПОНЕНТЫ v15) ---
 MODEL_VERSION = 'v15 (150 классов)'
-MODEL_PATH = 'full_neural_network_model_v15.h5'
+MODEL_PATH = 'full_neural_network_model_v15_opt.h5'
 PREPROCESSOR_PATH = 'full_preprocessor_v15.pkl'
 ENCODER_PATH = 'full_label_encoder_v15.pkl'
 FEATURES_PATH = 'full_feature_names_v15.pkl' 
