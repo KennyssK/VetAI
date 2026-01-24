@@ -158,9 +158,9 @@ docker run --gpus all --rm -v ${pwd}:/app vet-ai-image python benchmark.py
 
 | Аппаратная конфигурация | Вычислительный модуль | Core Inference Latency (мс) | End-to-End System Latency (мс) | Статус производительности |
 |:---|:---|:---|:---|:---|
-| **Workstation:** i5-11400f / 16GB ddr4 3200/ **NVIDIA RTX 3060 12GB GDDR6** | **GPU (CUDA)** | **58ms** |**0.1071 ms**| **Real-time:** Мгновенный отклик |
+| **Workstation:** i5-11400f / 16GB ddr4 3200/ **NVIDIA RTX 3060 12GB GDDR6** | **GPU (CUDA)** | **58ms** |**0.0695 ms**| **Real-time:** Мгновенный отклик |
 | **Workstation:** i5-12400f / 32GB ddr4 3200 / **NVIDIA RTX 4060 8GB GDDR6** | **GPU (CUDA)** | **in test now** | **in test now**| **in test now** |
-| **Mobile Workstation:** r5-3550h / 32GB ddr4 2400 / **NVIDIA GTX 1650 4GB GDDR5** | **GPU (CUDA)** | **in test now** | **in test now**| **in test now** |
+| **Mobile Workstation:** r5-3550h / 32GB ddr4 2400 / **NVIDIA GTX 1650 4GB GDDR5** | **GPU (CUDA)** | **93 ms** | **0.0990 ms**| **in test now** |
 | **Mobile Node:** i7-8650u / 16GB ddr4 2400 (No GPU) | **CPU (AVX2/FMA)** | **276 ms** | **4.4691 ms**| **Stable (Fallback mode):** Допустимая задержка (Input Lag) |
 | **Mobile Node:** r7-4700u / 16GB ddr4 3200 (No GPU) | **CPU (AVX2/FMA)** | **238 ms** | **4.2431 ms**| **Stable (Fallback mode):** Допустимая задержка (Input Lag) |
 | **Mobile Node:** i5-2520M / 4GB ddr3 1333 (No GPU) | **CPU (AVX)** | **1467 ms** | **25.8865 ms**| **Not stable (Fallback mode):** Критическая задержка (Input Lag) |
@@ -215,9 +215,9 @@ docker run --gpus all --rm -v ${pwd}:/app vet-ai-image python benchmark.py
 | :--- | :--- | :--- |
 | **Процессор (CPU)** | **Intel Core i3-10100** / **Ryzen 3 3100** | **Intel Core i5-11400** / **Ryzen 5 3600** |
 | **Оперативная память** | 16 GB DDR4 | 16 GB DDR4/DDR5 |
-| **Видеокарта (GPU)** | Интегрированная (AVX2 support) | **NVIDIA RTX 2060** / **RTX 3050** |
-| **Видеопамять (VRAM)** | — | 8 GB GDDR6 |
-| **Latency (отклик)** | ~200 - 300 ms | ~30 - 40 ms |
+| **Видеокарта (GPU)** | Интегрированная (AVX2 support) | **NVIDIA GTX 1650** / **GTX 1660** |
+| **Видеопамять (VRAM)** | — | 4 GB GDDR6 |
+| **Latency (отклик)** | ~200 - 300 ms | ~30 - 50 ms |
 
 ### 2. Рекомендуемые требования (Recommended)
 *Для обеспечения мгновенного отклика и многопоточной обработки.*
