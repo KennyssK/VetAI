@@ -157,7 +157,7 @@ docker run --gpus all --rm -v ${pwd}:/app vet-ai-image python benchmark.py
 Показатель латентности измерялся как время полного цикла: от передачи вектора признаков в модель до получения вероятностного распределения диагнозов.
 
 | Аппаратная конфигурация | Вычислительный модуль | Core Inference Latency (мс) | End-to-End System Latency (мс) | Статус производительности |
-|:---|:---|:---|:---|
+|:---|:---|:---|:---|:---|
 | **Workstation:** i5-11400f / 16GB ddr4 3200/ **NVIDIA RTX 3060 12GB GDDR6** | **GPU (CUDA)** | **58ms** |**0.1071 ms**| **Real-time:** Мгновенный отклик |
 | **Workstation:** i5-12400f / 32GB ddr4 3200 / **NVIDIA RTX 4060 8GB GDDR6** | **GPU (CUDA)** | **in test now** | **in test now**| **in test now** |
 | **Mobile Workstation:** r5-3550h / 32GB ddr4 2400 / **NVIDIA GTX 1650 4GB GDDR5** | **GPU (CUDA)** | **in test now** | **in test now**| **in test now** |
