@@ -158,8 +158,8 @@ docker run --gpus all --rm -v ${pwd}:/app vet-ai-image python benchmark.py
 
 | Аппаратная конфигурация | Вычислительный модуль | Core Inference Latency (мс) | End-to-End System Latency (мс) | Статус производительности |
 |:---|:---|:---|:---|:---|
-| **Workstation:** i5-11400f / 16GB ddr4 3200/ **NVIDIA RTX 3060 12GB GDDR6** | **GPU (CUDA)** | **58ms** |**0.0695 ms**| **Real-time:** Мгновенный отклик |
-| **Workstation:** i5-12400f / 32GB ddr4 3200 / **NVIDIA RTX 4060 8GB GDDR6** | **GPU (CUDA)** | **in test now** | **in test now**| **in test now** |
+| **Workstation:** i5-11400f / 16GB ddr4 3200/ **NVIDIA RTX 3060 12GB GDDR6** | **GPU (CUDA)** | **58 ms** |**0.0695 ms**| **Real-time:** Мгновенный отклик |
+| **Workstation:** i5-13400f / 32GB ddr4 3200 / **NVIDIA RTX 4060 8GB GDDR6** | **GPU (CUDA)** | **45 ms** | **0.0423 ms**| **Real-time:** Мгновенный отклик |
 | **Mobile Workstation:** r5-3550h / 32GB ddr4 2400 / **NVIDIA GTX 1650 4GB GDDR5** | **GPU (CUDA)** | **93 ms** | **0.0990 ms**| **Real-time:** Мгновенный отклик |
 | **Mobile Node:** i7-8650u / 16GB ddr4 2400 (No GPU) | **CPU (AVX2/FMA)** | **276 ms** | **4.4691 ms**| **Stable (Fallback mode):** Допустимая задержка (Input Lag) |
 | **Mobile Node:** r7-4700u / 16GB ddr4 3200 (No GPU) | **CPU (AVX2/FMA)** | **238 ms** | **4.2431 ms**| **Stable (Fallback mode):** Допустимая задержка (Input Lag) |
