@@ -158,12 +158,12 @@ docker run --gpus all --rm -v ${pwd}:/app vet-ai-image python benchmark.py
 
 | Аппаратная конфигурация | Вычислительный модуль | Core Inference Latency (мс) | End-to-End System Latency (мс) | Статус производительности |
 |:---|:---|:---|:---|:---|
-| **Workstation:** i5-11400f / 16GB ddr4 3200/ **NVIDIA RTX 3060 12GB GDDR6** | **GPU (CUDA)** | **58 ms** |**0.0695 ms**| **Real-time:** Мгновенный отклик |
-| **Workstation:** i5-13400f / 32GB ddr4 3200 / **NVIDIA RTX 4060 8GB GDDR6** | **GPU (CUDA)** | **45 ms** | **0.0423 ms**| **Real-time:** Мгновенный отклик |
-| **Mobile Workstation:** r5-3550h / 32GB ddr4 2400 / **NVIDIA GTX 1650 4GB GDDR5** | **GPU (CUDA)** | **93 ms** | **0.0990 ms**| **Real-time:** Мгновенный отклик |
-| **Mobile Node:** i7-8650u / 16GB ddr4 2400 (No GPU) | **CPU (AVX2/FMA)** | **276 ms** | **4.4691 ms**| **Stable (Fallback mode):** Допустимая задержка (Input Lag) |
-| **Mobile Node:** r7-4700u / 16GB ddr4 3200 (No GPU) | **CPU (AVX2/FMA)** | **238 ms** | **4.2431 ms**| **Stable (Fallback mode):** Допустимая задержка (Input Lag) |
-| **Mobile Node:** i5-2520M / 4GB ddr3 1333 (No GPU) | **CPU (AVX)** | **1467 ms** | **25.8865 ms**| **Not stable (Fallback mode):** Критическая задержка (Input Lag) |
+| **Workstation:** i5-11400f / 16GB ddr4 3200/ **NVIDIA RTX 3060 12GB GDDR6** | **GPU (CUDA)** |**0.0695 ms**| **58 ms** | **Real-time:** Мгновенный отклик |
+| **Workstation:** i5-13400f / 32GB ddr4 3200 / **NVIDIA RTX 4060 8GB GDDR6** | **GPU (CUDA)** | **0.0423 ms**| **45 ms** | **Real-time:** Мгновенный отклик |
+| **Mobile Workstation:** r5-3550h / 32GB ddr4 2400 / **NVIDIA GTX 1650 4GB GDDR5** | **GPU (CUDA)** | **0.0990 ms**| **93 ms** | **Real-time:** Мгновенный отклик |
+| **Mobile Node:** i7-8650u / 16GB ddr4 2400 (No GPU) | **CPU (AVX2/FMA)** | **4.4691 ms**| **276 ms** | **Stable (Fallback mode):** Допустимая задержка (Input Lag) |
+| **Mobile Node:** r7-4700u / 16GB ddr4 3200 (No GPU) | **CPU (AVX2/FMA)** | **4.2431 ms**| **238 ms** | **Stable (Fallback mode):** Допустимая задержка (Input Lag) |
+| **Mobile Node:** i5-2520M / 4GB ddr3 1333 (No GPU) | **CPU (AVX)** | **25.8865 ms** | **1467 ms** | **Not stable (Fallback mode):** Критическая задержка (Input Lag) |
 
 ### Выводы по оптимизации:
 * **Адаптивность инференса:** Система сохраняет полную функциональность при отсутствии дискретного графического ускорителя. Переключение на CPU-вычисления (Fallback mode) обеспечивает стабильную работу на мобильных устройствах, хотя и сопровождается возрастанием латентности, обусловленным последовательной обработкой тензоров.
