@@ -227,7 +227,7 @@ docker run --gpus all --rm -v ${pwd}:/app vet-ai-image python benchmark.py
 | **Процессор (CPU)** | **Intel Core i5-10400** / **Ryzen 5 5600H** | **Intel Core i7-12700** / **Ryzen 7 5800X** |
 | **Оперативная память** | **32 GB DDR4/DDR5** | **32 GB+ DDR5** |
 | **Видеокарта (GPU)** | **NVIDIA GTX 1650** | **NVIDIA RTX 4070** / **RTX 3080** |
-| **Видеопамять (VRAM)** | 4 GB | **12 GB+ GDDR6X** |
+| **Видеопамять (VRAM)** | **4 GB GDDR5** | **12 GB+ GDDR6X** |
 | **Latency (отклик)** | ~30 - 45 ms | **< 10 ms** |
 
 ### 🛠 Программная среда
